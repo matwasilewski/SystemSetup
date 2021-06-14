@@ -30,9 +30,23 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 # Install anaconda
 
+# Install Spotify
+curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add - 
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+
 # Install Sublime text editor
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+
+# Install NordVPN
+if ! command -v nordvpn &> /dev/null
+  wget https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
+  sudo apt-get install nordvpn-release_1.0.0_all.deb
+  sudo apt-get update
+  sudo apt-get install nordvpn
+then
+fi
+
 
 # Install Oh-my-zsh plugins
 #zsh-syntax highlight
