@@ -28,7 +28,8 @@ sudo apt-get install brave-browser
 # Install Python's dependencies
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
-# Install anaconda
+# Install Poetry
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 
 # Install Spotify
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add - 
@@ -37,6 +38,11 @@ echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sou
 # Install Sublime text editor
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+
+# Install Powerline Patched fonts
+git clone https://github.com/powerline/fonts.git --depth=1
+./fonts/install.sh
+rm -rf fonts
 
 # Install NordVPN
 if ! command -v nordvpn &> /dev/null
