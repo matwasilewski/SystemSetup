@@ -10,3 +10,5 @@ Incomplete but working - still missing some configurations, VPN, keybindings. In
 2. `./setup.sh` can initiatiate the installation sequence.
 3. It will automatically download the dotfiles repo and create appropriate symlinks.
 4. Logout and login.
+5. Change font in the terminal to powerline patched one - I use `Deja Vu Powerline`
+
